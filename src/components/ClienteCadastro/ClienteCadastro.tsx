@@ -44,29 +44,28 @@ const ClienteCadastro: React.FC = () => {
       setMensagem('Ocorreu um erro ao cadastrar o cliente!')
     }
   }
+
+  return (
+    <div>
+      <h1>Cadastro de Clientes</h1>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Nome:</label>
+          <input type="text" name="nome" value={cliente.nome} onChange={handleInputChange} />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" value={cliente.email} onChange={handleInputChange} />
+        </div>
+        <div>
+          <label>Telefone:</label>
+          <input type="text" name="telefone" value={cliente.telefone} onChange={handleInputChange} />
+        </div>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+      {mensagem && <p>{mensagem}</p>}
+    </div>
+  )
 }
-
-return (
-  <div>
-    <h1>Cadastro de Clientes</h1>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Nome:</label>
-        <input type="text" name="nome" value={cliente.nome} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" name="email" value={cliente.email} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Telefone:</label>
-        <input type="text" name="telefone" value={cliente.telefone} onChange={handleInputChange} />
-      </div>
-
-      <button type="submit">Cadastrar</button>
-    </form>
-    {mensagem && <p>{mensagem}</p>}
-  </div>
-)
-
 export default ClienteCadastro

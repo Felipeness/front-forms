@@ -1,5 +1,3 @@
-import React from 'react'
-
 import ClienteCadastro from '@/components/ClienteCadastro/ClienteCadastro'
 import ClienteListagem from '@/components/ClienteListagem/ClienteListagem'
 
