@@ -13,6 +13,11 @@ const ClienteListagem: React.FC = () => {
   const [clientes, setClientes] = useState<Cliente[]>([])
   const [filtro, setFiltro] = useState('') // Adicionado estado para o filtro
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
+
   // Função para buscar clientes na API
   const fetchClientes = async () => {
     try {
@@ -38,9 +43,14 @@ const ClienteListagem: React.FC = () => {
   )
 
   return (
-    <div>
+    <div className="cliente-listagem">
       <h1>Listagem de Clientes</h1>
-      <input type="text" placeholder="Filtrar clientes" value={filtro} onChange={(e) => setFiltro(e.target.value)} />
+      <input
+        type="text"
+        placeholder="Filtrar clientes por email, nome ou telefone"
+        value={filtro}
+        onChange={(e) => setFiltro(e.target.value)}
+      />
       <ul>
         {clientesFiltrados.map((cliente) => (
           <li key={cliente.id}>
@@ -48,6 +58,24 @@ const ClienteListagem: React.FC = () => {
           </li>
         ))}
       </ul>
+
+      <button onClick={openModal}>Mostrar Clientes</button>
+
+      {isModalOpen && (
+        <>
+          <div className="modal-backdrop"></div>
+          <div className="modal">
+            <button onClick={closeModal}>Fechar</button>
+            <ul>
+              {clientes.map((cliente) => (
+                <li key={cliente.id}>
+                  {cliente.nome} - {cliente.email} - {cliente.telefone}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </>
+      )}
     </div>
   )
 }
