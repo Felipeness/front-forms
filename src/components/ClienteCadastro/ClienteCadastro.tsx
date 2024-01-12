@@ -46,7 +46,7 @@ const ClienteCadastro: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="cadastro-cliente">
       <h1>Cadastro de Clientes</h1>
       <form onSubmit={handleSubmit}>
         <div>
