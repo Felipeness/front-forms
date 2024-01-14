@@ -1,6 +1,7 @@
 import './clienteCadastro.scss'
 
 import React, { useState } from 'react'
+import InputMask from 'react-input-mask'
 
 interface Cliente {
   nome: string
@@ -59,7 +60,7 @@ const ClienteCadastro: React.FC = () => {
         </div>
         <div>
           <label>Telefone:</label>
-          <input type="text" name="telefone" value={cliente.telefone} onChange={handleInputChange} />
+          <InputMask mask="(99) 99999-9999" name="telefone" value={cliente.telefone} onChange={handleInputChange} />
         </div>
 
         <button type="submit">Cadastrar</button>
