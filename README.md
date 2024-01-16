@@ -1,46 +1,53 @@
-# Vite5, React18 (A simple generic example template)
+# Forms :sparkles:
 
-This starter template includes:
+## :open_book: Sobre o Projeto
 
-- [Vite 5](https://vitejs.dev/guide/)
-- [React18](https://react.docschina.org/)
-- [React Router dom 6](https://reactrouter.com/en/main)
-- [zustand](https://github.com/pmndrs/zustand): Popular React State Management Solution.
-- [framer-motion](https://www.framer.com/motion/introduction/): It powers the amazing animations and interactions in Framer, the web builder for creative pros. Zero code, maximum speed.(If you don't need it, you can delete it.)
-- Docker support.
-- Introduce typescript, use tsx writing style.
-- Aktiver Eslint,prettier,husky,stylelint, automatisk specifikation af projektkode.
+Este projeto é uma aplicação web construída com o Vite React template, destinada a simplificar e otimizar o gerenciamento de clientes. Utilizando um design simples e funcionalidades faceis, o projeto visa oferecer uma solução completa para o cadastro e listagem de clientes.
 
-Unplugin Utilities:
+### :star2: Funcionalidades
 
-- [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - auto import the most used APIs
+- **Cadastro de Clientes:** Uma interface amigável que permite o cadastro de novos clientes, com campos para nome, contato, email e telefone entre outros.
+- **Listagem de Clientes:** Uma página para visualizar todos os clientes cadastrados, com opções de pesquisa, filtro e ações de edição ou exclusão.
 
-### Getting Started
+## :computer: Tecnologias Utilizadas
 
-1. Clone code: execute command---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+Este projeto incorpora várias tecnologias líderes de mercado:
 
-2. The editor opens and downloads the dependencies：Execution of commands--- `pnpm i`
+- **React:** Para construção de interfaces de usuário dinâmicas.
+- **Vite:** Um ambiente de desenvolvimento rápido e eficiente.
+- **Axios:** Para requisições HTTP baseadas em promessas.
+- **Framer Motion:** Para animações fluidas e interativas.
+- **React Router DOM:** Gerenciamento de navegação.
+- **Zustand:** Para um gerenciamento de estado simplificado.
+- **React Icons:** Biblioteca rica em ícones para interfaces React.
+- **React Input Mask:** Máscaras de entrada para formulários.
+- **Docker:** Deixei o docker nessa aplicação para ter um ambiente a mais.
 
-3. Running Projects：pnpm dev
+### Como usar o docker?
 
-4. Packing project
+1. Certifique-se de que o Docker esteja instalado em seu computador.
 
-   > Test Package：pnpm build:test
-   >
-   > Production Package：pnpm build
-   >
-   > (The environment variable file (env) has been added to the root directory, so you can add packaging commands and environment files according to your project.）
+2. Basta executar `npm release:local`
 
-### How to use docker?
+3. Então você pode visualizar seu projeto em `<seu IP>:8082`
 
-1. Ensure that Docker is installed on your computer.
+## :rocket: Como Executar
 
-2. Just run `pnpm release:local`
+Para executar o projeto localmente, siga estas etapas:
 
-3. Then you can view your project on `<your IP>:8082`
+1. Clone o repositório: `git clone URL_DO_REPOSITORIO`.
+2. Navegue até a pasta do projeto e instale as dependências: `npm install`.
+3. Execute o projeto: `npm run dev`.
+4. Acesse `http://localhost:5173` no seu navegador para ver a aplicação em funcionamento.
 
-### Note
+## :speech_balloon: Suporte e Feedback
 
-Vite5 requires your node version to be 18+ or 20+.
+Para relatar bugs, sugerir melhorias ou solicitar suporte, abra uma issue no GitHub. Seu feedback é essencial para a melhoria contínua do projeto.
 
-### Support
+## :scroll: Licença
+
+Este projeto está sob a licença MIT. Para detalhes completos, consulte o arquivo `LICENSE` no repositório.
+
+## :trophy: Autor
+
+- **[Felipe Ness]** - Desenvolvedor do projeto. Para mais informações, visite [SeuPerfilGitHub](https://github.com/Felipeness).
