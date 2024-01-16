@@ -7,6 +7,8 @@ interface Cliente {
   nome: string
   email: string
   telefone: string
+  coordenadas_x: number
+  coordenadas_y: number
 }
 
 interface Erros {
@@ -16,7 +18,13 @@ interface Erros {
 }
 
 const ClienteCadastro: React.FC = () => {
-  const [cliente, setCliente] = useState<Cliente>({ nome: '', email: '', telefone: '' })
+  const [cliente, setCliente] = useState<Cliente>({
+    nome: '',
+    email: '',
+    telefone: '',
+    coordenadas_x: 0,
+    coordenadas_y: 0,
+  })
   const [mensagem, setMensagem] = useState<string>('')
   const [erros, setErros] = useState<Erros>({})
   const [enviando, setEnviando] = useState<boolean>(false)
@@ -58,7 +66,7 @@ const ClienteCadastro: React.FC = () => {
 
     setEnviando(true)
     try {
-      const response = await fetch('http://localhost:8080/clientes', {
+      const response = await fetch('http://localhost:3000/clientes/clientes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +76,7 @@ const ClienteCadastro: React.FC = () => {
 
       if (response.ok) {
         setMensagem('Cliente cadastrado com sucesso!')
-        setCliente({ nome: '', email: '', telefone: '' })
+        setCliente({ nome: '', email: '', telefone: '', coordenadas_x: 0, coordenadas_y: 0 })
       } else {
         setMensagem('Ocorreu um erro ao cadastrar o cliente!')
       }
@@ -119,6 +127,30 @@ const ClienteCadastro: React.FC = () => {
             className={erros.telefone ? 'input-error' : ''}
           />
           {erros.telefone && <div className="error-message">{erros.telefone}</div>}
+        </div>
+        <div>
+          <label>Coordenada X:</label>
+          <input
+            type="number"
+            name="coordenadas_x"
+            value={cliente.coordenadas_x}
+            onChange={handleInputChange}
+            placeholder="Digite a coordenada X"
+            className={erros.nome ? 'input-error' : ''}
+          />
+          {erros.nome && <div className="error-message">{erros.nome}</div>}
+        </div>
+        <div>
+          <label>Coordenada Y:</label>
+          <input
+            type="number"
+            name="coordenadas_y"
+            value={cliente.coordenadas_y}
+            onChange={handleInputChange}
+            placeholder="Digite a coordenada Y"
+            className={erros.nome ? 'input-error' : ''}
+          />
+          {erros.nome && <div className="error-message">{erros.nome}</div>}
         </div>
 
         <button type="submit" disabled={enviando}>
