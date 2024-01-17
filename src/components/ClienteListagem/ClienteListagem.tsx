@@ -28,7 +28,7 @@ const ClienteListagem: React.FC = () => {
         setClientes(data)
       } catch (error) {
         if (error instanceof Error) {
-          setErro('Falha ao carregar clientes: ${error.message}')
+          setErro(`Falha ao carregar clientes: ${error.message}`)
         } else {
           setErro('Erro ao buscar clientes')
         }
@@ -84,7 +84,7 @@ const ClienteListagem: React.FC = () => {
         setClientes(clientes.filter((cliente) => cliente.id !== id))
       } catch (error) {
         if (error instanceof Error) {
-          setErro('Falha ao excluir cliente: ${error.message}')
+          setErro(`Falha ao excluir cliente: ${error.message}`)
         } else {
           setErro('Erro ao excluir cliente')
         }
@@ -94,9 +94,9 @@ const ClienteListagem: React.FC = () => {
 
   const filteredClientes = clientes.filter(
     (cliente) =>
-      cliente.nome.toLowerCase().includes(filtro.toLowerCase()) ||
-      cliente.email.toLowerCase().includes(filtro.toLowerCase()) ||
-      cliente.telefone.includes(filtro),
+      (cliente.nome ?? '').toLowerCase().includes(filtro.toLowerCase()) ||
+      (cliente.email ?? '').toLowerCase().includes(filtro.toLowerCase()) ||
+      (cliente.telefone ?? '').includes(filtro),
   )
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>, field: keyof Cliente): void => {

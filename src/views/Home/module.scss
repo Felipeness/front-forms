@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.cliente-cadastro {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cliente-lista {
+  flex: 1;
+  margin-right: 10px;
+}

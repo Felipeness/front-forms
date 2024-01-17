@@ -1,11 +1,17 @@
+import './module.scss'
+
 import ClienteCadastro from '@/components/ClienteCadastro/ClienteCadastro'
 import ClienteListagem from '@/components/ClienteListagem/ClienteListagem'
 
 const Home = () => {
   return (
-    <div>
-      <ClienteListagem />
-      <ClienteCadastro />
+    <div className="container">
+      <div className="cliente-cadastro">
+        <ClienteCadastro />
+      </div>
+      <div className="cliente-lista">
+        <ClienteListagem />
+      </div>
     </div>
   )
 }
