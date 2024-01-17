@@ -35,7 +35,7 @@ Este projeto incorpora várias tecnologias líderes de mercado:
 
 Para executar o projeto localmente, siga estas etapas:
 
-1. Clone o repositório: `git clone URL_DO_REPOSITORIO`.
+1. Clone o repositório: `git clone https://github.com/Felipeness/front-forms.git`.
 2. Navegue até a pasta do projeto e instale as dependências: `npm install`.
 3. Execute o projeto: `npm run dev`.
 4. Acesse `http://localhost:5173` no seu navegador para ver a aplicação em funcionamento.
